@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Istanbul Tourist Pass - Next.js Project
+
+A fast, modern travel website built with Next.js 14, PrimeReact, and TypeScript for Istanbul Tourist Pass.
+
+## Features
+
+- ⚡ **Fast Performance** - Server-side rendering with Next.js App Router
+- 🎨 **Modern UI** - PrimeReact components with clean design
+- 📱 **Responsive** - Mobile-first responsive design
+- 🖼️ **Optimized Images** - Next.js Image component for fast loading
+- 🔄 **Dynamic Data** - API routes for fetching dynamic content
+- 🎯 **TypeScript** - Full type safety
+
+## Tech Stack
+
+- **Next.js 14** - React framework with App Router
+- **PrimeReact** - UI component library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS framework
 
 ## Getting Started
 
-First, run the development server:
+### Installation
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+/app
+  /api/destinations   # API route for dynamic data
+  /components         # React components
+    - Header.tsx      # Navigation header
+    - Footer.tsx      # Footer component
+    - HeroSection.tsx # Hero section with search
+    - CardGrid.tsx    # Destination cards grid
+  /lib
+    - api.ts          # Data fetching functions
+  /types
+    - index.ts        # TypeScript types
+  /page.tsx           # Homepage
+  /layout.tsx         # Root layout
+/public
+  /images             # Image assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Adding Images
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Place your images in `/public/images/` directory. The application expects:
 
-## Deploy on Vercel
+- `hero.jpg` - Hero section image
+- `antalya.jpg`, `cappadocia.jpg`, `istanbul.jpg`, etc. - Destination images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+See `/public/images/README.md` for more details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Dynamic Data
+
+The application fetches data from `/api/destinations` endpoint. You can:
+
+1. **Use Mock Data** - Currently uses mock data from `app/lib/api.ts`
+2. **Connect to Real API** - Update `fetchDestinations()` in `app/lib/api.ts` with your API endpoint
+3. **Use API Route** - Data is served from `app/api/destinations/route.ts`
+
+## Customization
+
+### Colors
+
+Edit `app/globals.css` to customize the color scheme.
+
+### PrimeReact Theme
+
+Change the theme in `app/layout.tsx`:
+```tsx
+import "primereact/resources/themes/lara-light-blue/theme.css";
+```
+
+Available themes: `lara-light-blue`, `lara-dark-blue`, `lara-light-indigo`, etc.
+
+### Travel Theme Colors
+
+The site uses orange/red gradient colors (orange-500 to red-500) matching travel website aesthetics. You can customize these in:
+- Component files (Tailwind classes)
+- `app/globals.css` (PrimeReact button overrides)
+
+### Components
+
+All components are in `/app/components/` and can be easily customized.
+
+## Performance Tips
+
+- Images are automatically optimized by Next.js
+- Server Components are used by default for better performance
+- API responses are cached (1 hour revalidation)
+- Lazy loading for below-fold images
+
+## License
+
+MIT
