@@ -1,8 +1,12 @@
 import HeroSection from './components/HeroSection';
+import TrustBanner from './components/TrustBanner';
+import TopLandmarks from './components/TopLandmarks';
 import CardGrid from './components/CardGrid';
 import CampaignCarousel from './components/CampaignCarousel';
+import BenefitsSection from './components/BenefitsSection';
 import MobileAppSection from './components/MobileAppSection';
-import PopularDestinations from './components/PopularDestinations';
+import TestimonialsSection from './components/TestimonialsSection';
+import NewsletterSection from './components/NewsletterSection';
 import AboutSection from './components/AboutSection';
 import { getDestinations, getTravelPackages } from './lib/api';
 
@@ -14,21 +18,24 @@ export default async function Home() {
     <div className="bg-gray-50">
       <HeroSection />
       
+      <TrustBanner />
+      
+      <TopLandmarks />
+      
       <CampaignCarousel 
         items={packages.slice(0, 6)} 
-        title="Special Offers & Campaigns"
+        title="Special Offers & Packages"
       />
       
       <CardGrid items={destinations} />
       
-      <CampaignCarousel 
-        items={packages.slice(3, 6)} 
-        title="Best Deals This Week"
-      />
+      <BenefitsSection />
       
       <MobileAppSection />
       
-      <PopularDestinations />
+      <TestimonialsSection />
+      
+      <NewsletterSection />
       
       <AboutSection />
     </div>

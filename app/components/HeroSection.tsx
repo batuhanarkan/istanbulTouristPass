@@ -20,6 +20,13 @@ export default function HeroSection() {
 
   return (
     <section className="relative text-white overflow-hidden" style={{ backgroundColor: '#F0034E' }}>
+      {/* Urgency Banner */}
+      <div className="bg-yellow-400 text-gray-900 py-2 text-center relative z-20">
+        <p className="text-sm sm:text-base font-bold animate-pulse">
+          ⚡️ LAST CALL ⏰ BEFORE PRICES INCREASE! ⚡️ HURRY! 🤗 FINAL DAYS for 40% OFF DISCOUNT
+        </p>
+      </div>
+
       <div className="absolute inset-0">
         <Image
           src="https://images.istanbultouristpass.com/unsafe/1200x600/static.istanbultouristpass.com/app/img/hero-istanbul.jpg?v5.4.7"
