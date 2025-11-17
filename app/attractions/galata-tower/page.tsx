@@ -36,6 +36,7 @@ export default function GalataTowerPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
+    "@id": "https://istanbul-tourist-pass.vercel.app/attractions/galata-tower",
     "name": "Galata Tower",
     "description": "Visit Galata Tower with hosted entry and audio guide. Skip the ticket lines and enjoy panoramic 360-degree views of Istanbul.",
     "image": GALATA_TOWER_IMAGE,
@@ -55,17 +56,34 @@ export default function GalataTowerPage() {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
-      "reviewCount": "1250"
+      "reviewCount": "1250",
+      "bestRating": "5",
+      "worstRating": "1"
     },
     "offers": {
       "@type": "Offer",
       "price": "40",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": "/attractions/galata-tower"
+      "url": "https://istanbul-tourist-pass.vercel.app/attractions/galata-tower",
+      "validFrom": "2025-01-01"
     },
     "touristType": "Historical Landmark",
-    "openingHours": "Mo-Th, Sa-Su 09:00-20:00"
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    ]
   };
 
   return (
