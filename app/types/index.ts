@@ -7,6 +7,7 @@ export interface Destination {
   location?: string;
   price?: string;
   rating?: number;
+  category?: string[];
 }
 
 export interface TravelPackage {

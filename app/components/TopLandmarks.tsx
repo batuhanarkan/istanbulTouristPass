@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Card } from 'primereact/card';
 
@@ -92,18 +91,17 @@ export default function TopLandmarks() {
           {landmarks.map((landmark) => (
             <Card key={landmark.id} className="shadow-md hover:shadow-xl transition-shadow overflow-hidden h-full">
               <Link href={landmark.link}>
-                <div className="relative h-48 sm:h-56 mb-4 rounded-t-lg overflow-hidden">
-                  <Image
-                    src={landmark.image}
-                    alt={landmark.title}
-                    fill
-                    className="object-cover"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    unoptimized={true}
-                  />
+                <div 
+                  className="relative h-48 sm:h-56 mb-4 rounded-t-lg overflow-hidden bg-gray-200"
+                  style={{
+                    backgroundImage: `url(${landmark.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                >
                   {landmark.free && (
-                    <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                    <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
                       FREE
                     </div>
                   )}

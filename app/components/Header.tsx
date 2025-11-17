@@ -140,16 +140,6 @@ export default function Header() {
           start={start} 
           end={end}
           className="border-0 bg-transparent py-2"
-          itemTemplate={(item, options) => {
-            return (
-              <a href={item.url} className={options.className} onClick={options.onClick}>
-                <span className={options.labelClassName}>
-                  <i className={item.icon}></i>
-                  <span>{item.label}</span>
-                </span>
-              </a>
-            );
-          }}
         />
         {/* Language dropdown for mobile menu - positioned at top */}
         <div className="mobile-language-dropdown-wrapper md:hidden">

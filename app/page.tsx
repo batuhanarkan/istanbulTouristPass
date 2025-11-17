@@ -91,13 +91,13 @@ export default async function Home() {
       
       <CTASection />
       
+      <AboutSection />
+      
       <MobileAppSection />
       
       <TestimonialsSection />
       
       <NewsletterSection />
-      
-      <AboutSection />
     </div>
   );
 }

@@ -4,6 +4,7 @@ const IMAGE_BASE = 'https://images.istanbultouristpass.com/unsafe/0x370/static.i
 const IMAGE_VERSION = '?v5.4.7';
 
 const GALATA_TOWER_IMAGE = `${IMAGE_BASE}/galata-tower-skip-the-ticket-line-entry-with-audio-guide919224.jpeg${IMAGE_VERSION}`;
+const ISTANBUL_PASS_IMAGE = 'https://cdn.istanbultouristpass.com/banner/doc/0d4e489d14e6cb2828e70c39f69a15b0-663e35a2162b9.jpg';
 
 export async function getDestinations(): Promise<Destination[]> {
   await new Promise(resolve => setTimeout(resolve, 100));
@@ -13,11 +14,12 @@ export async function getDestinations(): Promise<Destination[]> {
       id: '1',
       title: 'Hagia Sophia',
       description: 'Guided tour with skip-the-ticket-line entry to this iconic Byzantine masterpiece',
-      image: GALATA_TOWER_IMAGE,
+      image: 'https://static.istanbultouristpass.com/videos/2.mp4?v5.4.7',
       link: '/attractions/hagia-sophia',
       location: 'Istanbul',
       price: '€35',
-      rating: 4.9
+      rating: 4.9,
+      category: ['Most Popular', 'Historical Landmarks', 'Museums', 'Mosques & Places of Worship']
     },
     {
       id: '2',
@@ -27,37 +29,41 @@ export async function getDestinations(): Promise<Destination[]> {
       link: '/attractions/galata-tower',
       location: 'Istanbul',
       price: '€40',
-      rating: 4.8
+      rating: 4.8,
+      category: ['Most Popular', 'Historical Landmarks', 'Towers & Observation Decks']
     },
     {
       id: '3',
       title: 'Topkapi Palace Museum',
       description: 'Guided tour with Harem including entry tickets to the Ottoman sultans\' palace',
-      image: GALATA_TOWER_IMAGE,
+      image: 'https://static.istanbultouristpass.com/videos/4.mp4?v5.4.7',
       link: '/attractions/topkapi-palace',
       location: 'Istanbul',
       price: '€65',
-      rating: 4.9
+      rating: 4.9,
+      category: ['Most Popular', 'Historical Landmarks', 'Museums']
     },
     {
       id: '4',
       title: 'Basilica Cistern',
       description: 'Guided tour with skip-the-ticket-line entry to the ancient underground water reservoir',
-      image: GALATA_TOWER_IMAGE,
+      image: 'https://static.istanbultouristpass.com/videos/5.mp4?v5.4.7',
       link: '/attractions/basilica-cistern',
       location: 'Istanbul',
       price: '€39',
-      rating: 4.7
+      rating: 4.7,
+      category: ['Historical Landmarks', 'Museums']
     },
     {
       id: '5',
       title: 'Dolmabahce Palace',
       description: 'Skip-the-ticket-line entry with audio guide to the magnificent Ottoman palace',
-      image: GALATA_TOWER_IMAGE,
+      image: 'https://static.istanbultouristpass.com/videos/6.mp4?v5.4.7',
       link: '/attractions/dolmabahce-palace',
       location: 'Istanbul',
       price: '€46',
-      rating: 4.8
+      rating: 4.8,
+      category: ['Historical Landmarks', 'Museums']
     },
     {
       id: '6',
@@ -67,7 +73,8 @@ export async function getDestinations(): Promise<Destination[]> {
       link: '/attractions/blue-mosque',
       location: 'Istanbul',
       price: '€25',
-      rating: 4.8
+      rating: 4.8,
+      category: ['Historical Landmarks', 'Mosques & Places of Worship']
     },
     {
       id: '7',
@@ -77,17 +84,19 @@ export async function getDestinations(): Promise<Destination[]> {
       link: '/attractions/camlica-tower',
       location: 'Istanbul',
       price: 'Included',
-      rating: 4.7
+      rating: 4.7,
+      category: ['Towers & Observation Decks']
     },
     {
       id: '8',
       title: 'Bosphorus Cruise',
       description: 'Golden Horn & Bosphorus sightseeing cruise with audio guide',
-      image: GALATA_TOWER_IMAGE,
+      image: 'https://static.istanbultouristpass.com/videos/231.mp4?v5.4.7',
       link: '/attractions/bosphorus-cruise',
       location: 'Istanbul',
       price: '€30',
-      rating: 4.9
+      rating: 4.9,
+      category: ['Sightseeing & Bosphorus Cruise', 'Most Popular']
     },
     {
       id: '9',
@@ -97,7 +106,8 @@ export async function getDestinations(): Promise<Destination[]> {
       link: '/attractions/grand-bazaar',
       location: 'Istanbul',
       price: 'Free',
-      rating: 4.6
+      rating: 4.6,
+      category: ['Experiences', 'Historical Landmarks']
     },
     {
       id: '10',
@@ -107,7 +117,8 @@ export async function getDestinations(): Promise<Destination[]> {
       link: '/attractions/spice-bazaar',
       location: 'Istanbul',
       price: 'Free',
-      rating: 4.7
+      rating: 4.7,
+      category: ['Experiences', 'Historical Landmarks']
     },
     {
       id: '11',
@@ -117,17 +128,19 @@ export async function getDestinations(): Promise<Destination[]> {
       link: '/attractions/maidens-tower',
       location: 'Istanbul',
       price: '€25',
-      rating: 4.6
+      rating: 4.6,
+      category: ['Towers & Observation Decks', 'Historical Landmarks']
     },
     {
       id: '12',
       title: 'Yildiz Palace',
       description: 'Skip-the-ticket-line entry with audio guide to the Ottoman imperial palace',
-      image: GALATA_TOWER_IMAGE,
+      image: 'https://static.istanbultouristpass.com/videos/265.mp4?v5.4.7',
       link: '/attractions/yildiz-palace',
       location: 'Istanbul',
       price: '€28',
-      rating: 4.7
+      rating: 4.7,
+      category: ['Historical Landmarks', 'Museums']
     }
   ];
 }
@@ -140,7 +153,7 @@ export async function getTravelPackages(): Promise<TravelPackage[]> {
       id: '1',
       title: 'Istanbul Tourist Pass - 3 Days',
       description: 'Access to 100+ attractions including Hagia Sophia, Galata Tower, Topkapi Palace and more',
-      image: GALATA_TOWER_IMAGE,
+      image: ISTANBUL_PASS_IMAGE,
       link: '/passes/3-days',
       destination: 'Istanbul',
       price: '€139',
@@ -151,7 +164,7 @@ export async function getTravelPackages(): Promise<TravelPackage[]> {
       id: '2',
       title: 'Istanbul Tourist Pass - 5 Days',
       description: 'Comprehensive pass with skip-the-line access to all major Istanbul attractions',
-      image: GALATA_TOWER_IMAGE,
+      image: ISTANBUL_PASS_IMAGE,
       link: '/passes/5-days',
       destination: 'Istanbul',
       price: '€189',
@@ -162,7 +175,7 @@ export async function getTravelPackages(): Promise<TravelPackage[]> {
       id: '3',
       title: 'Istanbul Tourist Pass - 7 Days',
       description: 'Ultimate pass for extended stays with unlimited access to attractions and tours',
-      image: GALATA_TOWER_IMAGE,
+      image: ISTANBUL_PASS_IMAGE,
       link: '/passes/7-days',
       destination: 'Istanbul',
       price: '€229',
@@ -173,7 +186,7 @@ export async function getTravelPackages(): Promise<TravelPackage[]> {
       id: '4',
       title: 'Bosphorus Dinner Cruise',
       description: 'Evening cruise with Turkish shows and traditional dinner on the Bosphorus',
-      image: GALATA_TOWER_IMAGE,
+      image: 'https://static.istanbultouristpass.com/videos/231.mp4?v5.4.7',
       link: '/packages/bosphorus-dinner',
       destination: 'Istanbul',
       price: '€60',
@@ -184,7 +197,7 @@ export async function getTravelPackages(): Promise<TravelPackage[]> {
       id: '5',
       title: 'Princes\' Islands Tour',
       description: 'Full-day tour to Buyukada Island with lunch and roundtrip boat ticket',
-      image: GALATA_TOWER_IMAGE,
+      image: 'https://images.istanbultouristpass.com/unsafe/410x540/cdn.istanbultouristpass.com/banner/attraction/heybeliada_istanbul_tourist_pass%20(28).jpeg',
       link: '/packages/princes-islands',
       destination: 'Istanbul',
       price: '€45',

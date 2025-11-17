@@ -88,6 +88,11 @@ body {
   transform: translateY(-2px);
 }
 
+/* Ensure menu item icons are displayed */
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
+  margin-right: 0.5rem;
+}
+
 .p-button {
   border-radius: 6px !important;
   border: 1px solid transparent !important;
@@ -181,13 +186,15 @@ body {
 
 .custom-carousel .p-carousel-indicator button {
   background: #d1d5db;
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
+  border-radius: 2px;
+  width: 40px;
+  height: 4px;
+  transition: all 0.3s ease;
 }
 
 .custom-carousel .p-carousel-indicator.p-highlight button {
   background: #F0034E;
+  width: 48px;
 }
 
 @media (max-width: 640px) {
@@ -341,6 +348,34 @@ a, button {
 
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
+}
+
+/* Category filter tabs styling */
+.category-filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #F0034E transparent;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.category-filter-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.category-filter-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.category-filter-tabs::-webkit-scrollbar-thumb {
+  background: #F0034E;
+  border-radius: 2px;
+}
+
+.category-filter-tabs::-webkit-scrollbar-thumb:hover {
+  background: #d10342;
 }
 
 /* Hide language button in end section on mobile - handled by Tailwind classes */

@@ -31,19 +31,34 @@ export default function CampaignCarousel({ items, title }: CampaignCarouselProps
   ];
 
   const itemTemplate = (item: TravelPackage) => {
+    const isIstanbulPass = item.title.includes('Istanbul Tourist Pass') && 
+                           (item.title.includes('3 Days') || item.title.includes('5 Days') || item.title.includes('7 Days'));
+    const isVideo = item.image && item.image.includes('.mp4');
+    
     return (
       <div className="px-2 sm:px-3">
         <Card className="shadow-md hover:shadow-xl transition-shadow overflow-hidden h-full">
-          <div className="relative h-48 sm:h-56 overflow-hidden" style={{ backgroundColor: '#F0034E' }}>
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              className="object-cover"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              unoptimized={true}
-            />
+          <div className="relative h-48 sm:h-56 overflow-hidden" style={!isIstanbulPass ? { backgroundColor: '#F0034E' } : {}}>
+            {isVideo ? (
+              <video
+                src={item.image}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            ) : (
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                unoptimized={true}
+              />
+            )}
             {item.discount && (
               <div className="absolute top-3 right-3 text-white px-3 py-1 rounded-full text-sm font-bold" style={{ backgroundColor: '#d10342' }}>
                 {item.discount}
