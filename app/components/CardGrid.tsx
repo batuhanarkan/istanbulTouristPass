@@ -118,24 +118,33 @@ export default function CardGrid({ items }: CardGridProps) {
                 <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-2">
                   {item.description}
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   {item.price && (
-                    <span className="text-lg font-bold" style={{ color: '#F0034E' }}>{item.price}</span>
+                    <div>
+                      <span className="text-2xl font-bold" style={{ color: '#F0034E' }}>{item.price}</span>
+                      <span className="text-xs text-gray-500 block">Included with Pass</span>
+                    </div>
                   )}
                   {item.link && (
-                    <Link href={item.link}>
+                    <Link href={item.link} className="w-full sm:w-auto">
                       <Button 
-                        label="View Details" 
-                        icon="pi pi-arrow-right"
-                        className="text-white text-sm px-4 py-2 transition-all hover:scale-105 hover:shadow-md"
-                        style={{ backgroundColor: '#F0034E', border: '1px solid #F0034E' }}
+                        label="View Details & Buy" 
+                        icon="pi pi-shopping-cart"
+                        className="w-full sm:w-auto text-white text-sm px-6 py-2.5 transition-all hover:scale-105 hover:shadow-lg font-semibold"
+                        style={{ 
+                          backgroundColor: '#F0034E', 
+                          border: '1px solid #F0034E',
+                          boxShadow: '0 4px 12px rgba(240, 3, 78, 0.3)'
+                        }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.backgroundColor = '#d10342';
                           e.currentTarget.style.borderColor = '#d10342';
+                          e.currentTarget.style.transform = 'scale(1.05)';
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.backgroundColor = '#F0034E';
                           e.currentTarget.style.borderColor = '#F0034E';
+                          e.currentTarget.style.transform = 'scale(1)';
                         }}
                         size="small"
                       />

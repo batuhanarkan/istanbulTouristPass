@@ -4,6 +4,7 @@ import TopLandmarks from './components/TopLandmarks';
 import CardGrid from './components/CardGrid';
 import CampaignCarousel from './components/CampaignCarousel';
 import BenefitsSection from './components/BenefitsSection';
+import CTASection from './components/CTASection';
 import MobileAppSection from './components/MobileAppSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import NewsletterSection from './components/NewsletterSection';
@@ -22,7 +23,6 @@ export default async function Home() {
     "description": "Book your perfect holiday with amazing deals on hotels, flights, tours and travel packages in Istanbul and Turkey. Access 100+ attractions with skip-the-line instant e-tickets.",
     "url": "https://istanbul-tourist-pass.vercel.app",
     "logo": "https://istanbul-tourist-pass.vercel.app/logo.png",
-    "image": "https://images.istanbultouristpass.com/unsafe/1200x600/static.istanbultouristpass.com/app/img/hero-istanbul.jpg?v5.4.7",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Istanbul",
@@ -88,6 +88,8 @@ export default async function Home() {
       <CardGrid items={destinations} />
       
       <BenefitsSection />
+      
+      <CTASection />
       
       <MobileAppSection />
       

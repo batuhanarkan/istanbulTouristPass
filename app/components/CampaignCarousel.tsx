@@ -69,14 +69,24 @@ export default function CampaignCarousel({ items, title }: CampaignCarouselProps
                 )}
               </div>
               {item.link && (
-                <Link href={item.link}>
+                <Link href={item.link} className="w-full sm:w-auto">
                   <button 
-                    className="text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
-                    style={{ backgroundColor: '#F0034E' }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d10342'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F0034E'}
+                    className="w-full sm:w-auto text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
+                    style={{ 
+                      backgroundColor: '#F0034E',
+                      boxShadow: '0 4px 12px rgba(240, 3, 78, 0.3)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#d10342';
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#F0034E';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
                   >
-                    View Details
+                    <i className="pi pi-shopping-cart"></i>
+                    Buy Now
                   </button>
                 </Link>
               )}

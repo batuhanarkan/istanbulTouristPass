@@ -6,6 +6,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FloatingBuyButton from "./components/FloatingBuyButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
         <main className="min-h-screen">
           {children}
         </main>
+        <FloatingBuyButton />
         <Footer />
       </body>
     </html>

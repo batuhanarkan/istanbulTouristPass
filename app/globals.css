@@ -22,6 +22,60 @@ body {
   border: none !important;
 }
 
+/* Hide mobile menu button (hamburger) on desktop - always show menu items */
+.p-menubar .p-menubar-button {
+  display: none !important;
+}
+
+/* On desktop, always show menu items horizontally */
+.p-menubar .p-menubar-root-list {
+  display: flex !important;
+  flex-direction: row !important;
+  position: static !important;
+}
+
+/* Mobile styles - show hamburger menu button and collapse menu */
+@media (max-width: 768px) {
+  /* Position hamburger button on the right, next to Buy Now button */
+  .p-menubar {
+    position: relative !important;
+  }
+  
+  .p-menubar .p-menubar-button {
+    display: flex !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin-right: 0.75rem !important;
+    z-index: 10 !important;
+  }
+  
+  /* Adjust end section to make room for hamburger button */
+  .p-menubar .p-menubar-end {
+    margin-right: 3.5rem !important;
+  }
+  
+  /* Hide menu items on mobile by default */
+  .p-menubar .p-menubar-root-list {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: white !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    z-index: 1000 !important;
+    flex-direction: column !important;
+    padding: 1rem !important;
+    display: none !important;
+  }
+  
+  /* Show menu items when mobile menu is active */
+  .p-menubar.p-menubar-mobile-active .p-menubar-root-list {
+    display: flex !important;
+  }
+}
+
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
   border-radius: 6px;
   transition: all 0.3s ease;
@@ -153,3 +207,140 @@ a, button {
   align-items: center;
   justify-content: center;
 }
+
+/* Language dropdown - smaller icons and text */
+.p-dropdown .p-dropdown-trigger {
+  width: 1.5rem !important;
+  padding: 0 0.25rem !important;
+}
+
+.p-dropdown .p-dropdown-trigger-icon {
+  font-size: 0.5rem !important;
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+}
+
+.p-dropdown {
+  font-size: 0.75rem !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.p-dropdown .p-dropdown-label {
+  padding: 0 !important;
+  font-size: 0.75rem !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+/* Align dropdown and button in header */
+.p-menubar .p-menubar-end {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Mobile language dropdown in collapsed menu */
+.mobile-language-dropdown-wrapper {
+  display: none !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: white !important;
+  z-index: 1001 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Show language dropdown when mobile menu is active */
+@media (max-width: 768px) {
+  .p-menubar.p-menubar-mobile-active ~ .mobile-language-dropdown-wrapper {
+    display: block !important;
+  }
+}
+
+.mobile-language-dropdown {
+  width: 100% !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.mobile-language-dropdown .p-dropdown {
+  width: 100% !important;
+  min-width: 95px !important;
+  display: flex !important;
+  visibility: visible !important;
+  border-radius: 6px !important;
+}
+
+.mobile-language-dropdown .p-dropdown .p-dropdown-label {
+  padding: 8px 12px !important;
+  font-size: 0.875rem !important;
+}
+
+/* Adjust mobile menu to appear below language dropdown */
+@media (max-width: 768px) {
+  .p-menubar.p-menubar-mobile-active .p-menubar-root-list {
+    top: calc(100% + 90px) !important;
+  }
+}
+
+/* Hero section pass duration dropdown fix */
+.hero-pass-duration-dropdown {
+  width: 100% !important;
+}
+
+.hero-pass-duration-dropdown .p-dropdown-label {
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  min-height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.hero-pass-duration-dropdown .p-dropdown-trigger {
+  padding-right: 0.75rem !important;
+}
+
+/* Hero section search input fix */
+.hero-search-input {
+  width: 100% !important;
+  padding-left: 2.5rem !important;
+  min-height: 48px !important;
+}
+
+.hero-search-input::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Hero section number of persons input fix */
+.hero-persons-input {
+  width: 100% !important;
+  padding-left: 2.5rem !important;
+  min-height: 48px !important;
+}
+
+.hero-persons-input::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Floating Buy Button Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Hide language button in end section on mobile - handled by Tailwind classes */

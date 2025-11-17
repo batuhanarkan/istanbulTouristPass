@@ -1,22 +1,8 @@
 'use client';
 
 import { Button } from 'primereact/button';
-import { InputText } from 'primereact/inputtext';
-import { Dropdown } from 'primereact/dropdown';
-import { useState } from 'react';
 
 export default function HeroSection() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [passDuration, setPassDuration] = useState<string | null>(null);
-  const [numberOfPersons, setNumberOfPersons] = useState<number>(1);
-
-  const passDurationOptions = [
-    { label: 'Select Pass Duration', value: null },
-    { label: '3 Days Pass', value: '3' },
-    { label: '5 Days Pass', value: '5' },
-    { label: '7 Days Pass', value: '7' }
-  ];
-
   return (
     <section className="relative text-white overflow-hidden" style={{ backgroundColor: '#F0034E' }}>
       {/* Urgency Banner */}
@@ -27,15 +13,7 @@ export default function HeroSection() {
       </div>
 
       <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage: 'url(https://images.istanbultouristpass.com/unsafe/1200x600/static.istanbultouristpass.com/app/img/hero-istanbul.jpg?v5.4.7)',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover'
-          }}
-        />
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(240, 3, 78, 0.9)' }}></div>
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(240, 3, 78, 0.95)' }}></div>
       </div>
       
       <div className="container mx-auto px-4 py-12 sm:py-16 md:py-20 relative z-10">
@@ -49,68 +27,73 @@ export default function HeroSection() {
             </p>
           </div>
           
-          <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-2xl">
-            <div className="space-y-4">
-              <div className="relative">
-                <i className="pi pi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                <InputText 
-                  placeholder="Search attractions, museums, or landmarks..." 
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 py-3 text-base border-gray-300"
-                  style={{ '--tw-ring-color': '#F0034E' } as React.CSSProperties}
-                  onFocus={(e) => (e.target as HTMLInputElement).style.borderColor = '#F0034E'}
-                  onBlur={(e) => (e.target as HTMLInputElement).style.borderColor = ''}
+          {/* Simplified Hero CTA - Direct Shopping Focus */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border-2 border-white">
+            <div className="text-center space-y-6">
+              {/* Trust Badge */}
+              <div className="flex flex-wrap items-center justify-center gap-3 text-sm mb-4">
+                <div className="flex items-center gap-2 bg-green-50 rounded-full px-4 py-2 border border-green-200">
+                  <i className="pi pi-check-circle text-green-600"></i>
+                  <span className="font-semibold text-gray-900">4.9/5 Rating</span>
+                </div>
+                <div className="flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2 border border-blue-200">
+                  <i className="pi pi-users text-blue-600"></i>
+                  <span className="font-semibold text-gray-900">12,500+ Happy Travelers</span>
+                </div>
+                <div className="flex items-center gap-2 bg-yellow-50 rounded-full px-4 py-2 border border-yellow-200">
+                  <i className="pi pi-shield text-yellow-600"></i>
+                  <span className="font-semibold text-gray-900">Money-Back Guarantee</span>
+                </div>
+              </div>
+
+              {/* Main CTA Button - Large and Prominent */}
+              <div className="space-y-4 pt-6 sm:pt-8 pb-6 sm:pb-8">
+                <Button 
+                  label="Buy Istanbul Tourist Pass Now" 
+                  icon="pi pi-shopping-cart"
+                  className="w-full sm:w-auto text-white py-4 px-8 sm:px-12 text-lg sm:text-xl font-bold transition-all hover:scale-105 hover:shadow-2xl animate-pulse-icon"
+                  style={{ 
+                    backgroundColor: '#F0034E', 
+                    border: '2px solid #F0034E',
+                    boxShadow: '0 10px 30px rgba(240, 3, 78, 0.4)',
+                    minHeight: '60px'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#d10342';
+                    e.currentTarget.style.borderColor = '#d10342';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#F0034E';
+                    e.currentTarget.style.borderColor = '#F0034E';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                  size="large"
                 />
+                <p className="text-gray-700 text-sm sm:text-base">
+                  Starting from <span className="font-bold text-xl" style={{ color: '#F0034E' }}>€139</span> - Save up to 50%
+                </p>
               </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="relative">
-                  <i className="pi pi-calendar absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 z-10"></i>
-                  <Dropdown 
-                    value={passDuration} 
-                    onChange={(e) => setPassDuration(e.value)}
-                    options={passDurationOptions} 
-                    placeholder="Select Pass Duration"
-                    className="w-full pl-10"
-                    panelClassName="border-gray-300"
-                  />
+
+              {/* Quick Benefits */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 border-t border-gray-200">
+                <div className="text-center">
+                  <i className="pi pi-ticket text-2xl sm:text-3xl mb-2 block" style={{ color: '#F0034E' }}></i>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-900">100+ Attractions</p>
                 </div>
-                
-                <div className="relative">
-                  <i className="pi pi-users absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 z-10"></i>
-                  <InputText 
-                    type="number"
-                    value={numberOfPersons.toString()}
-                    onChange={(e) => {
-                      const value = parseInt(e.target.value) || 1;
-                      setNumberOfPersons(Math.max(1, value));
-                    }}
-                    placeholder="Number of Persons"
-                    min={1}
-                    className="w-full pl-10 py-3 text-base border-gray-300"
-                  style={{ '--tw-ring-color': '#F0034E' } as React.CSSProperties}
-                  onFocus={(e) => (e.target as HTMLInputElement).style.borderColor = '#F0034E'}
-                  onBlur={(e) => (e.target as HTMLInputElement).style.borderColor = ''}
-                  />
+                <div className="text-center">
+                  <i className="pi pi-clock text-2xl sm:text-3xl mb-2 block" style={{ color: '#F0034E' }}></i>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-900">Skip Lines</p>
+                </div>
+                <div className="text-center">
+                  <i className="pi pi-mobile text-2xl sm:text-3xl mb-2 block" style={{ color: '#F0034E' }}></i>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-900">Mobile App</p>
+                </div>
+                <div className="text-center">
+                  <i className="pi pi-calendar text-2xl sm:text-3xl mb-2 block" style={{ color: '#F0034E' }}></i>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-900">Flexible Dates</p>
                 </div>
               </div>
-              
-              <Button 
-                label="Find Attractions & Buy Pass" 
-                icon="pi pi-search"
-                className="w-full text-white py-3 text-base font-semibold transition-all hover:scale-105 hover:shadow-lg"
-                style={{ backgroundColor: '#F0034E', border: '1px solid #F0034E' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#d10342';
-                  e.currentTarget.style.borderColor = '#d10342';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F0034E';
-                  e.currentTarget.style.borderColor = '#F0034E';
-                }}
-                size="large"
-              />
             </div>
           </div>
         </div>
