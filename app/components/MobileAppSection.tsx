@@ -46,6 +46,7 @@ export default function MobileAppSection() {
                   width={180}
                   height={60}
                   className="h-12 sm:h-14 w-auto hover:opacity-80 transition-opacity"
+                  unoptimized={true}
                 />
               </Link>
               <Link 
@@ -60,6 +61,7 @@ export default function MobileAppSection() {
                   width={200}
                   height={78}
                   className="h-12 sm:h-14 w-auto hover:opacity-80 transition-opacity"
+                  unoptimized={true}
                 />
               </Link>
             </div>

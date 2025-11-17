@@ -84,6 +84,7 @@ export default function GalataTowerPage() {
             className="object-cover"
             priority
             sizes="100vw"
+            unoptimized={true}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>

@@ -100,6 +100,7 @@ export default function TopLandmarks() {
                     className="object-cover"
                     loading="lazy"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    unoptimized={true}
                   />
                   {landmark.free && (
                     <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
@@ -132,11 +133,18 @@ export default function TopLandmarks() {
         <div className="text-center mt-8 sm:mt-12">
           <Link href="/attractions">
             <button 
-              className="text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-colors"
-              style={{ backgroundColor: '#F0034E' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d10342'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F0034E'}
+              className="text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all hover:scale-105 hover:shadow-lg flex items-center gap-2 mx-auto"
+              style={{ backgroundColor: '#F0034E', border: '1px solid #F0034E' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#d10342';
+                e.currentTarget.style.borderColor = '#d10342';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#F0034E';
+                e.currentTarget.style.borderColor = '#F0034E';
+              }}
             >
+              <i className="pi pi-arrow-right animate-pulse-icon"></i>
               View All 100+ Attractions
             </button>
           </Link>

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getDestinations, getTravelPackages } from '../../lib/api';
+import { getDestinations } from '../../lib/api';
 
 export async function GET() {
   try {

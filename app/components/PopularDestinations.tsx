@@ -41,7 +41,7 @@ export default function PopularDestinations() {
           Popular Destinations
         </h2>
         <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-          Explore Istanbul's most popular attractions and landmarks
+          Explore Istanbul&apos;s most popular attractions and landmarks
         </p>
       </div>
       

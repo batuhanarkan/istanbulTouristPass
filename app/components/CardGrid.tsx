@@ -61,7 +61,7 @@ export default function CardGrid({ items }: CardGridProps) {
           Popular Istanbul Attractions
         </h2>
         <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2 mb-6">
-          Discover Istanbul's iconic landmarks, museums, and attractions with skip-the-line access.
+          Discover Istanbul&apos;s iconic landmarks, museums, and attractions with skip-the-line access.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-xl mx-auto mb-8">
@@ -97,6 +97,7 @@ export default function CardGrid({ items }: CardGridProps) {
                   className="object-cover"
                   loading="lazy"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  unoptimized={true}
                 />
                 {item.rating && (
                   <div className="absolute top-2 right-2 bg-white/90 rounded-full px-2 py-1 flex items-center gap-1">
@@ -125,10 +126,17 @@ export default function CardGrid({ items }: CardGridProps) {
                     <Link href={item.link}>
                       <Button 
                         label="View Details" 
-                        className="text-white text-sm px-4 py-2 transition-colors"
-                        style={{ backgroundColor: '#F0034E' }}
-                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d10342'}
-                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F0034E'}
+                        icon="pi pi-arrow-right"
+                        className="text-white text-sm px-4 py-2 transition-all hover:scale-105 hover:shadow-md"
+                        style={{ backgroundColor: '#F0034E', border: '1px solid #F0034E' }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#d10342';
+                          e.currentTarget.style.borderColor = '#d10342';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = '#F0034E';
+                          e.currentTarget.style.borderColor = '#F0034E';
+                        }}
                         size="small"
                       />
                     </Link>

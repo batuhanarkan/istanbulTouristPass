@@ -22,6 +22,69 @@ body {
   border: none !important;
 }
 
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+  background: rgba(240, 3, 78, 0.1) !important;
+  border-color: rgba(240, 3, 78, 0.3);
+  transform: translateY(-2px);
+}
+
+.p-button {
+  border-radius: 6px !important;
+  border: 1px solid transparent !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.p-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.p-button:active {
+  transform: translateY(0) !important;
+}
+
+/* Animated icons */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-bounce-icon {
+  animation: bounce 2s infinite;
+}
+
+.animate-pulse-icon {
+  animation: pulse 2s infinite;
+}
+
+.animate-rotate-icon {
+  animation: rotate 3s linear infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, transform, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
 .p-card {
   border-radius: 8px;
 }

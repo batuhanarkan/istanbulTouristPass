@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { Dropdown } from 'primereact/dropdown';
@@ -28,13 +27,13 @@ export default function HeroSection() {
       </div>
 
       <div className="absolute inset-0">
-        <Image
-          src="https://images.istanbultouristpass.com/unsafe/1200x600/static.istanbultouristpass.com/app/img/hero-istanbul.jpg?v5.4.7"
-          alt="Istanbul Skyline"
-          fill
-          className="object-cover opacity-30"
-          priority
-          sizes="100vw"
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage: 'url(https://images.istanbultouristpass.com/unsafe/1200x600/static.istanbultouristpass.com/app/img/hero-istanbul.jpg?v5.4.7)',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover'
+          }}
         />
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(240, 3, 78, 0.9)' }}></div>
       </div>
@@ -100,10 +99,16 @@ export default function HeroSection() {
               <Button 
                 label="Find Attractions & Buy Pass" 
                 icon="pi pi-search"
-                className="w-full text-white py-3 text-base font-semibold transition-colors"
-                style={{ backgroundColor: '#F0034E' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d10342'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F0034E'}
+                className="w-full text-white py-3 text-base font-semibold transition-all hover:scale-105 hover:shadow-lg"
+                style={{ backgroundColor: '#F0034E', border: '1px solid #F0034E' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#d10342';
+                  e.currentTarget.style.borderColor = '#d10342';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F0034E';
+                  e.currentTarget.style.borderColor = '#F0034E';
+                }}
                 size="large"
               />
             </div>

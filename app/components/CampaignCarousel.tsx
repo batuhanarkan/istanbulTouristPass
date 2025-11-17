@@ -42,6 +42,7 @@ export default function CampaignCarousel({ items, title }: CampaignCarouselProps
               className="object-cover"
               loading="lazy"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              unoptimized={true}
             />
             {item.discount && (
               <div className="absolute top-3 right-3 text-white px-3 py-1 rounded-full text-sm font-bold" style={{ backgroundColor: '#d10342' }}>
