@@ -175,6 +175,32 @@ export default function CardGrid({ items }: CardGridProps) {
           </div>
         )}
       </div>
+      
+      {/* View All Button - Under the cards */}
+      <div className="text-center mt-8 sm:mt-12">
+        <Link href="/attractions">
+          <Button 
+            label="View All 100+ Attractions"
+            icon="pi pi-arrow-right"
+            className="text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all hover:scale-105 hover:shadow-lg flex items-center gap-2 mx-auto"
+            style={{ 
+              backgroundColor: '#F0034E', 
+              border: '1px solid #F0034E',
+              boxShadow: '0 4px 12px rgba(240, 3, 78, 0.3)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#d10342';
+              e.currentTarget.style.borderColor = '#d10342';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#F0034E';
+              e.currentTarget.style.borderColor = '#F0034E';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+          />
+        </Link>
+      </div>
     </section>
   );
 }

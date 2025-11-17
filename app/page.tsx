@@ -78,8 +78,6 @@ export default async function Home() {
       
       <TrustBanner />
       
-      <TopLandmarks />
-      
       <CampaignCarousel 
         items={packages.slice(0, 6)} 
         title="Special Offers & Packages"
@@ -88,6 +86,8 @@ export default async function Home() {
       <CardGrid items={destinations} />
       
       <BenefitsSection />
+      
+      <TopLandmarks />
       
       <CTASection />
       

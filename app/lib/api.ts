@@ -208,7 +208,7 @@ export async function getTravelPackages(): Promise<TravelPackage[]> {
       id: '6',
       title: 'Whirling Dervishes Show',
       description: 'Authentic Turkish cultural experience at Abud Efendi Mansion',
-      image: GALATA_TOWER_IMAGE,
+      image: 'https://static.istanbultouristpass.com/videos/253.mp4?v5.4.7',
       link: '/packages/whirling-dervishes',
       destination: 'Istanbul',
       price: '€35',
