@@ -193,6 +193,7 @@ export async function getTravelPackages(): Promise<TravelPackage[]> {
       duration: '3 Hours',
       discount: 'Included with Pass'
     },
+    
     {
       id: '5',
       title: 'Princes\' Islands Tour',
